@@ -5,146 +5,227 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Sass/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/sass/font-awesome-6/css/all.min.css">
+    <!-- <link rel="stylesheet" href="fonts/Rounded_Elegance.ttf"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Kanit:wght@300&family=Montserrat:ital,wght@0,400;0,700;1,200&family=Poppins:wght@300&family=Roboto&family=Varela+Round&display=swap"
+        rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 
     <style>
-        .slider-container {
-            position: relative;
-            overflow: hidden;
-        }
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: blueviolet; */
+}
 
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
+section {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+section-header {
+  position: relative;
+  padding-bottom: 25;
+  text-align: center;
+  font-weight: 900;
+  /* color: #fff; */
+}
+section-header span {
+  display: block;
+  font-size: 15px;
+  font-weight: 300;
+}
+.testimonials {
+  max-width: 1000px;
+  padding: 0 15px 50px;
+  margin: 0 auto 80px auto;
+}
+.single-item {
+  background-color: blueviolet;
+  color: #111;
+  padding: 15px;
+  margin: 50px 15px;
+}
+.profile {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.img-area {
+  margin: 0 15px 15px 15px;
+}
+.img-area img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 7px solid blue;
+}
+.content {
+  font-size: 18px;
+}
+.content p {
+  text-align: justify;
+}
+.content p span {
+  font-size: 48px;
+  margin-right: 20px;
+  color: blueviolet;
+}
+.socials i {
+  margin-right: 25px;
+}
+.bio h4 {
+  font-family: berkshire swash;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon span {
+  color: #000 !important;
+}
 
-        .slide {
-            flex: 0 0 100%;
-        }
-
-        .testimonial {
-            padding: 30px;
-            text-align: center;
-            background-color: #f8f8f8;
-            border-radius: 5px;
-        }
-
-        .testimonial h3 {
-            margin-top: 20px;
-        }
-
-        .dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 0px;
-        }
-
-        .dot {
-            margin: 0 5px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: green;
-            cursor: pointer;
-        }
-
-        .active-dot {
-            background-color: rgb(236, 27, 62);
-        }
-
-        .active-dot:first-child:active {
-            background-color: red;
-        }
     </style>
 
 </head>
 
 <body>
 
-    <div class="slider-container">
-        <div class="slider">
-            <div class="slide">
-                <div class="testimonial">
-                    <img src="./7000961.jpg" width="100" height="100">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum, eros id tincidunt
-                        congue,
-                        risus purus ultricies odio, et dapibus nisi purus non magna.</p>
-                    <h3>John Doe</h3>
-                    <p>CEO, Example Company</p>
+  <!-- Header Start  -->
+    <section>
+        <div class="container">
+
+            <div class="testimonial">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="single-item">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="profile">
+                                            <div class="img-area">
+                                                <img src="images/7000961.png" alt="">
+                                            </div>
+                                            <div class="bio">
+                                                <h2>Mohammad</h2>
+                                                <h4>Nadeem</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 d-md-flex justify-content-center align-items-center">
+                                        <div class="content">
+                                            <p>Lorem ipsum
+                                                dolor sit amet consectetur adipisicing elit. Ipsa consequatur quo natus
+                                                quaerat exercitationem reprehenderit eos facere totam! Atque, quaerat.
+                                            </p>
+
+                                            <p class="socials">
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="single-item">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="profile">
+                                            <div class="img-area">
+                                                <img src="images/7000961.png" alt="">
+                                            </div>
+                                            <div class="bio">
+                                                <h2>Mohammad</h2>
+                                                <h4>Nadeem</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 d-md-flex justify-content-center align-items-center">
+                                        <div class="content">
+                                            <p> Lorem ipsum
+                                                dolor sit amet consectetur adipisicing elit. Ipsa consequatur quo natus
+                                                quaerat exercitationem reprehenderit eos facere totam! Atque, quaerat.
+                                            </p>
+
+                                            <p class="socials">
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="single-item">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="profile">
+                                            <div class="img-area">
+                                                <img src="images/7000961.png" alt="">
+                                            </div>
+                                            <div class="bio">
+                                                <h2>Mohammad</h2>
+                                                <h4>Nadeem</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 d-md-flex justify-content-center align-items-center">
+                                        <div class="content">
+                                            <p> Lorem ipsum
+                                                dolor sit amet consectetur adipisicing elit. Ipsa consequatur quo natus
+                                                quaerat exercitationem reprehenderit eos facere totam! Atque, quaerat.
+                                            </p>
+
+                                            <p class="socials">
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
-            <div class="slide">
-                <div class="testimonial">
-                     <img src="./7000961.jpg" width="100" height="100">
-                    <p>Sed in magna eget felis tincidunt posuere. Etiam tincidunt velit ut quam bibendum, ac lobortis mi
-                        faucibus.</p>
-                    <h3>Jane Smith</h3>
-                    <p>CTO, Example Company</p>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="testimonial">
-                     <img src="./7000961.jpg" width="100" height="100">
-                    <p>Phasellus euismod lorem vel nunc malesuada malesuada. Sed pellentesque pharetra ipsum in
-                        vestibulum.
-                    </p>
-                    <h3>Mark Johnson</h3>
-                    <p>CFO, Example Company</p>
-                </div>
-            </div>
-            
         </div>
-        <div class="dots"></div>
-    </div>
+    </section>
+
+    <!-- Header End  -->
 
 
 
 </body>
-<script>
-    const slider = document.querySelector(".slider");
-    const slides = document.querySelectorAll(".slide");
-    const dotsContainer = document.querySelector(".dots");
-    const dots = [];
-
-    let currentSlide = 0;
-
-    // Create dots for each slide
-    for (let i = 0; i < slides.length; i++) {
-        const dot = document.createElement("div");
-        dot.classList.add("dot");
-        dot.addEventListener("click", () => {
-            goToSlide(i);
-        });
-        dots.push(dot);
-        dotsContainer.appendChild(dot);
-    }
-
-    // Highlight the active dot
-    function updateDots() {
-        dots.forEach((dot) => {
-            dot.classList.remove("active-dot");
-        });
-        dots[currentSlide].classList.add("active-dot");
-    }
-
-    // Move to a specific slide
-    function goToSlide(slideNumber) {
-        currentSlide = slideNumber;
-        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        updateDots();
-    }
-
-    // Autoplay the slider
-    // setInterval(() => {
-    //     if (currentSlide === slides.length - 1) {
-    //         goToSlide(0);
-    //     } else {
-    //         goToSlide(currentSlide + 1);
-    //     }
-    // }, 5000);
-
-
-</script>
-
+<script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </html>
