@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -12,6 +15,8 @@
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
     <title>Testimonial</title>
@@ -126,146 +131,235 @@
         }
 
       
-.content {
-  margin: auto;
-  padding: 20px;
-  width: 80%;
-  max-width: 1200px;
-  min-width: 300px;
+.embed{
+  height:520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.slick-slider {
-  margin: 30px auto 50px;
-}
-
-.slick-prev,
-.slick-next {
-  color: white;
-  opacity: 1;
-  height: 40px;
-  width: 40px;
-  margin-top: -20px;
-}
-.slick-prev path,
-.slick-next path {
-  fill: rgba(255, 255, 255, 0.4);
-}
-.slick-prev:hover path,
-.slick-next:hover path {
-  fill: #000;
-}
-
-.slick-prev {
-  left: -35px;
-}
-
-.slick-next {
-  right: -35px;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  content: none;
-}
-
-.slick-dots li button:before {
-  color: rgba(255, 255, 255, 0.4);
-  opacity: 1;
-  font-size: 8px;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #000;
-}
-
-.quote-container {
-  min-height: 200px;
-  color: #333;
-  font-size: 36px;
-  margin: 0 20px;
+.slideshow-container {
+  max-width: 760px;
   position: relative;
-}
-.quote-container:hover {
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-.quote-container .portrait {
-  position: absolute;
-  top: 0;
-  bottom: 0;
   margin: auto;
-  height: 140px;
-  width: 140px;
-  overflow: hidden;
 }
-.quote-container .portrait img {
-  display: block;
-  height: auto;
+
+.slideshow-heading
+{
+  text-align:center;
+  font-family:'Roboto',sans-serif;
+  font-weight:400;
+  font-size:21px;
+}
+
+.slideshow-heading span {
+  position: relative;
+  padding: 0 8px 4px 8px;
+}
+
+.slideshow-heading span::before {
+  content: "";
+  background: #ffb00b;
+  height: 1.5px;
+  position: absolute;
+  bottom: .15em;
+  z-index: -1;
   width: 100%;
+  left: 0;
 }
-.quote-container .quote {
-  position: relative;
-  z-index: 600;
-  padding: 40px 0 40px 180px;
-  margin: 0;
-  font-size: 20px;
-  font-style: italic;
-  line-height: 1.4 !important;
-  font-family: Calibri;
-  color: white;
+
+.slideshow-subheading{
+  text-align:center;  
+  padding-bottom:20px;
 }
-.quote-container .quote p {
-  position: relative;
-  margin-bottom: 20px;
+
+.mySlides {
+  display: none;
+  text-align:center;
 }
-.quote-container .quote p:first-child:before {
-  content: "“";
-  color: rgba(255, 255, 255, 0.44);
-  font-size: 7.5em;
-  font-weight: 700;
-  opacity: 1;
-  position: absolute;
-  top: -0.4em;
-  left: -0.2em;
-  text-shadow: none;
-  z-index: -10;
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
-.quote-container .quote cite {
-  display: block;
-  font-size: 14px;
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
-.quote-container .quote cite span {
-  font-size: 16px;
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.testimony {
+  padding: 0 55px;
+}
+
+figure {    
+  padding: 40px 60px 0px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px 3px #d5d5d5;
+  margin: 0 -26px;
+  min-height: 244px;
+  font-style:italic;
+}
+
+figcaption {
   font-style: normal;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  margin-top: 15px;
 }
 
-.dragging .quote-container {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
+blockquote {
+  line-height: 1.85em;
+  font-size: 14px;
+  margin: 0;
 }
 
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 5% 0%;
-  }
-  50% {
-    background-position: 96% 100%;
-  }
-  100% {
-    background-position: 5% 0%;
-  }
+blockquote:before {
+  color: #ffc107;
+  content: open-quote;
+  font-size: 2em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
 }
-@keyframes gradient {
-  0% {
-    background-position: 5% 0%;
+
+blockquote:after {
+  color: #ffc107;
+  content: close-quote;
+  font-size: 2rem;
+  line-height: inherit;
+  margin-right: 0px;
+  vertical-align: top;
+}
+
+blockquote p {
+  display: inline;
+}
+
+.nav{
+  background:#333;
+  color: #ffb00b;
+  z-index: 99999;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  width:60px;
+  padding: 16px 20px;
+  width: 55px;
+  padding: 13px 17px;
+  margin-top: -22px;
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  margin-right: 1px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.icon {
+  color: #ffb00b;
+  font-size: 24px;
+}
+
+.dots{
+  text-align:center;
+  margin-top:20px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.stars{
+  display:block;
+  color:#FFBE3E;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: inherit;
   }
-  50% {
-    background-position: 96% 100%;
+
+  .embed{
+    display: block;
   }
-  100% {
-    background-position: 5% 0%;
+
+  .slideshow-subheading{
+    display:none;
+  }
+
+  .testimony {
+    padding: 0!important;
+  }
+  
+  figure {  
+    padding: 0px 30px 0px;
+    box-shadow:none;
+    border:none;
+    min-height: initial;
+  } 
+  
+  figcaption {
+    margin-top: 0;
+  }
+
+blockquote {
+    line-height: 1.5em;
+    margin:0px;
+    padding:0;
+  }
+
+  .prev, .next {
+    bottom: 0;
+    
+    padding: 4px 9px;
+    width: 35px;
+    top:inherit;
+  }
+  
+  .icon {
+    color: #ffb00b;
+    font-size: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 300px) {
+   body { 
+    background-color: #fff;
+  }
+  .prev, .next,.text {
+    font-size: 11px:
   }
 }
     </style>
@@ -337,51 +431,137 @@
         </div>
     </div>
 <br><br><br><br>
-    <div class='content'>
-  <div class='slider single-item'>
-    <div class='quote-container'>
-      <div class='portrait octogon'>
-        <img alt='' src='http://www.tuacahntech.com/uploads/6/1/7/9/6179841/6166205_orig.jpg'>
-      </div>
-      <div class='quote'>
-        <blockquote>
-          <p>Meditation shabby chic master cleanse banh mi Godard. Asymmetrical Wes Anderson Intelligentsia you probably haven't heard of them.</p>
-          <cite>
-            <span>Kristi McSweeney</span>
-            <br>
-            Thundercats twee
-            <br>
-            Austin selvage beard
-          </cite>
-        </blockquote>
-      </div>
-    </div>
-    <div class='quote-container'>
-      <div class='portrait octogon'>
-        <img alt='' src='http://static1.squarespace.com/static/51579fb2e4b0fc0d9469ff97/56cc83dfe707ebc39cf3269f/56d0b59e27d4bde4665fded3/1457365822199/'>
-      </div>
-      <div class='quote'>
-        <blockquote>
-          <p>Bespoke occupy cred seitan. Austin street art freegan Truffaut leggings aesthetic, salvia chia Brooklyn flexitarian. Single-origin coffee before they sold out health goth, cornhole irony keffiyeh Austin taxidermy mlkshk blog trust fund banh mi you probably haven't heard of them.</p>
-          <cite>
-            <span>Dina Anderson</span>
-            <br>
-            Blue Bottle keffiyeh
-            <br>
-            Sartorial locavore Schlitz ennui
-          </cite>
-        </blockquote>
+  <div class="embed">
+
+<div class="slideshow-container">
+
+  <h2 class="slideshow-heading"><span>What People Are Saying</span></h2>
+  <p class='slideshow-subheading'>Together we can help our youth be the best players that they can be. <br />Take a moment to share your feedback.
+  </p>
+
+  <a class="nav prev" onclick="plusSlides(-1)">
+    <i class="fas fa-arrow-left  icon"></i>
+  </a> 
+
+  <div>
+
+    <div class="mySlides fade">
+      <div class="testimony">
+        <figure>
+          <blockquote>
+            <p>I began my individuals with Zay in may of 2021 and since then I’ve became a better basketball player and gained confidence on the court and still work to elevate my game, coach Zay creates workouts to focus on my weaknesses and make me a better player.</p>
+          </blockquote>
+          <figcaption>
+           <span class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </span>
+               Abdul - Milton
+            </figcaption>
+        </figure>
       </div>
     </div>
+
+    <div class="mySlides fade">
+      <div class="testimony">
+        <figure>
+          <blockquote>
+            <p>Our 11 year old daughter just started playing basketball 6 months ago and after 6 sessions, her confidence on the court has increased by leaps and bounds.</p>
+          </blockquote>
+          <figcaption>
+           <span class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </span>
+               Tom - Alpharetta
+            </figcaption>
+        </figure>
+      </div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="testimony">
+        <figure>
+          <blockquote>
+            <p>You are an amazing trainer. Every kid would enjoy your way of teaching them. Jacob's way of dribbling is so much better now! Thank you very much!.</p>
+          </blockquote>
+          <figcaption>
+           <span class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </span>
+               Jessica - Cumming
+            </figcaption>
+        </figure>
+      </div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="testimony">
+        <figure>
+          <blockquote>
+            <p>Coach Zay really knows how to help players learn how to handle the ball when defense is pressuring you.  I'm now the point gaurd on the team and Zay gives me tips on how break defense's ankles.</p>
+          </blockquote>
+          <figcaption>
+           <span class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </span>
+               Maya - Cumming
+            </figcaption>
+        </figure>
+      </div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="testimony">
+        <figure>
+          <blockquote>
+            <p>My son looks forward to going to skills academy.  He likes that some of the drills are easy and others drills are hard.</p>
+          </blockquote>
+          <figcaption>
+           <span class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </span>
+               Dave - Cumming
+            </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot" onclick="currentSlide(4)"></span> 
+      <span class="dot" onclick="currentSlide(5)"></span> 
+    </div> 
+
   </div>
+
+  <a class="nav next" onclick="plusSlides(1)">
+    <i class="fas fa-arrow-right  icon"></i>
+  </a>
+
 </div>
-<svg>
-  <defs>
-    <clipPath clipPathUnits='objectBoundingBox' id='octogon'>
-      <polygon points='0.50001 0.00000, 0.61887 0.06700, 0.75011 0.06721, 0.81942 0.18444, 0.93300 0.25001, 0.93441 0.38641, 1.00000 0.49999, 0.93300 0.61887, 0.93300 0.75002, 0.81556 0.81944, 0.74999 0.93302, 0.61357 0.93444, 0.50001 1.00000, 0.38118 0.93302, 0.24998 0.93302, 0.18056 0.81556, 0.06700 0.74899, 0.06559 0.61359, 0.00000 0.49999, 0.06700 0.38111, 0.06700 0.25001, 0.18440 0.18058, 0.25043 0.06700, 0.38641 0.06559, 0.50001 0.00000'></polygon>
-    </clipPath>
-  </defs>
-</svg>
+  
+</div>
 
 
 
@@ -407,29 +587,33 @@
         });
     </script>
 
-<script>var prevButton =
-    '<button type="button" data-role="none" class="slick-prev" aria-label="prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" version="1.1"><path fill="#FFFFFF" d="M 16,16.46 11.415,11.875 16,7.29 14.585,5.875 l -6,6 6,6 z" /></svg></button>',
-  nextButton =
-    '<button type="button" data-role="none" class="slick-next" aria-label="next"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#FFFFFF" d="M8.585 16.46l4.585-4.585-4.585-4.585 1.415-1.415 6 6-6 6z"></path></svg></button>';
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
 
-$(".single-item").slick({
-  infinite: true,
-  dots: true,
-  autoplay: true,
-  autoplaySpeed: 4000,
-  speed: 1000,
-  cssEase: "ease-in-out",
-  prevArrow: prevButton,
-  nextArrow: nextButton
-});
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-$(".quote-container").mousedown(function () {
-  $(".single-item").addClass("dragging");
-});
-$(".quote-container").mouseup(function () {
-  $(".single-item").removeClass("dragging");
-});
-</script>
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}</script>
     
 </body>
 
