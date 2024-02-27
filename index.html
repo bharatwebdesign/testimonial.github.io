@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+        crossorigin="anonymous">
+    <title>My Objective Website Landing Page</title>
+
+    <style>
+        /* Global styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1rem;
+        }
+
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        main,
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            background-image: url("https://source.unsplash.com/random/1600x900");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+            box-shadow: 0px 5px 5px rgb(0 0 0 / 30%);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero button {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            flex-basis: calc(33.33% - 1rem);
+            background-color: #f2f2f2;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.25rem;
+            box-shadow: 0px 5px 5px rgb(0 0 0 / 10%);
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .about-me {
+            background-color: #f7f7f7;
+            padding: 50px 0;
+        }
+
+        .about-me h2 {
+            text-align: center;
+            margin-bottom: 50px;
+
+        }
+
+        #about {
+            box-shadow: 0px 5px 5px rgb(0 0 0 / 10%);
+        }
+
+        .about-me img {
+            width: 100%;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .about-me h3 {
+            margin-bottom: 20px;
+        }
+
+        .about-me p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .about-me a {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+
+        /* .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        } */
+
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            font-size: 16px;
+            margin-right: 20px;
+        }
+
+        li:last-child {
+            margin-right: 0;
+        }
+
+        /* Testimonial_Slider-Css Start */
+
+        .testimonial-slider {
+            display: flex;
+            overflow: hidden;
+        }
+
+
+
+        .testimonial {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            /* background-color: #f9f9f9; */
+            background-color: #fdfdfd;
+            box-shadow: 0px 5px 5px rgb(0 0 0 / 30%);
+        }
+
+
+        .testimonial.active {
+            opacity: 1;
+        }
+
+        /* Testimonial_Slider-Css Start */
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Media queries */
+        @media screen and (max-width: 768px) {
+            .feature {
+                flex-basis: calc(50% - 1rem);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to My Portfolio Website</h2>
+            <p>Beautiful and functional web design for businesses</p>
+            <button>Learn More</button>
+        </section>
+        <div class="container">
+            <div class="row mt-5">
+                <h2 id="about">About Me</h2>
+            </div>
+        </div>
+        <section class="features">
+            <div class="feature">
+
+                <h3>Introduction</h3>
+
+                <p>I'm a web designer with 1 year of experience in creating beautiful
+                    and functional websites for
+                    businesses.</p>
+            </div>
+            <div class="feature">
+                <h3>Skills</h3>
+                <p>My skills include HTML, CSS, JavaScript, and Photoshop. I'm also proficient in using various web
+                    design tools and
+                    frameworks such as Bootstrap and jQuery.</p>
+            </div>
+            <div class="feature">
+                <h3>My Passion</h3>
+                <p>My passion for web design stems from my desire to help businesses achieve their online goals by
+                    creating user-friendly
+                    and visually appealing websites that engage their target audience.</p>
+            </div>
+        </section>
+        <!-- <section class="about-me">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="./Clipboard01.png" alt="Profile Picture">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Mohammad Nadeem</h3>
+                        <p>I'm a web designer with 1 year of experience in creating beautiful and functional websites
+                            for
+                            businesses.</p>
+                        <p>My skills include HTML, CSS, JavaScript, and Photoshop. I'm also proficient in using various
+                            web
+                            design tools and frameworks such as Bootstrap and jQuery.</p>
+                        <p>My passion for web design stems from my desire to help businesses achieve their online goals
+                            by
+                            creating user-friendly and visually appealing websites that engage their target audience.
+                        </p>
+                        <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+    </main>
+    <!-- testimonial_Slider_Code  start-->
+    <!-- <div class="container">
+        <div class="row"> -->
+    <!-- <div class="testimonial-slider"> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial">
+
+                    <img src="./Clipboard01.png" alt="Mohammad Nadeem" title="Mohammad Nadeem"
+                        class="img-fluid img-bordere" style="width:70px;height:70px;border-radius: 50%;"><br><br>
+                    <p class="testimonial-text">"I really enjoyed working with this team. They were responsive,
+                        professional,
+                        and
+                        delivered excellent results."</p>
+                    <p class="testimonial-author">- John Smith</p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <img src="./Clipboard01.png" alt="Mohammad Nadeem" title="Mohammad Nadeem"
+                        class="img-fluid img-bordere" style="width:70px;height:70px;border-radius: 50%;"><br><br>
+                    <p class="testimonial-text">"The service provided was exceptional. They went above and beyond to
+                        ensure
+                        that
+                        our
+                        needs were met."</p>
+                    <p class="testimonial-author">- Jane Doe</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <img src="./Clipboard01.png" alt="Mohammad Nadeem" title="Mohammad Nadeem"
+                        class="img-fluid img-bordere" style="width:70px;height:70px;border-radius: 50%;"><br><br>
+                    <p class="testimonial-text">"The service provided was exceptional. They went above and beyond to
+                        ensure
+                        that
+                        our
+                        needs were met."</p>
+                    <p class="testimonial-author">- Jane Doe</p>
+                </div>
+            </div>
+            <!-- <div class="testimonial">
+                <img src="./Clipboard01.png" alt="Mohammad Nadeem" title="Mohammad Nadeem" class="img-fluid img-bordere"
+                    style="width:70px;height:70px;border-radius: 50%;">
+                <p class="testimonial-text">"I highly recommend this company. Their attention to detail and
+                    commitment
+                    to
+                    quality is unmatched."</p>
+                <p class="testimonial-author">- Michael Johnson</p>
+            </div> -->
+        </div>
+    </div>
+
+
+    <!-- </div> -->
+    <!-- </div>
+    </div> -->
+
+    <!-- testimonial_Slider_Code  end-->
+
+    <footer>
+        <p>&copy; 2023 My Objective Website. All rights reserved.</p>
+    </footer>
+
+</body>
+
+<script src="script.js"></script>
+<script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $('a[href^="#"]').on('click', function (event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+        });
+    });
+
+</script>
+
+<!-- testimonial_Slider_script  -->
+<script>
+    const testimonials = document.querySelectorAll('.testimonial');
+    let index = 0;
+
+    function showTestimonial() {
+        testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+        testimonials[index].classList.add('active');
+        index++;
+        if (index === testimonials.length) {
+            index = 0;
+        }
+    }
+
+    setInterval(showTestimonial, 5000);
+
+</script>
+
+<!-- testimonial_Slider_script  -->
+
+</html>

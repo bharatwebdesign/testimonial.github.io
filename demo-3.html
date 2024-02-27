@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Sass/bootstrap.min.css">
+    <title>Document</title>
+
+    <style>
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+        }
+
+        .testimonial {
+            padding: 30px;
+            text-align: center;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+        }
+
+        .testimonial h3 {
+            margin-top: 20px;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            margin: 0 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: green;
+            cursor: pointer;
+        }
+
+        .active-dot {
+            background-color: rgb(236, 27, 62);
+        }
+
+        .active-dot:first-child:active {
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <div class="testimonial">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum, eros id tincidunt
+                        congue,
+                        risus purus ultricies odio, et dapibus nisi purus non magna.</p>
+                    <h3>John Doe</h3>
+                    <p>CEO, Example Company</p>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="testimonial">
+                    <p>Sed in magna eget felis tincidunt posuere. Etiam tincidunt velit ut quam bibendum, ac lobortis mi
+                        faucibus.</p>
+                    <h3>Jane Smith</h3>
+                    <p>CTO, Example Company</p>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="testimonial">
+                    <p>Phasellus euismod lorem vel nunc malesuada malesuada. Sed pellentesque pharetra ipsum in
+                        vestibulum.
+                    </p>
+                    <h3>Mark Johnson</h3>
+                    <p>CFO, Example Company</p>
+                </div>
+            </div>
+        </div>
+        <div class="dots"></div>
+    </div>
+
+
+
+</body>
+<script>
+    const slider = document.querySelector(".slider");
+    const slides = document.querySelectorAll(".slide");
+    const dotsContainer = document.querySelector(".dots");
+    const dots = [];
+
+    let currentSlide = 0;
+
+    // Create dots for each slide
+    for (let i = 0; i < slides.length; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        dot.addEventListener("click", () => {
+            goToSlide(i);
+        });
+        dots.push(dot);
+        dotsContainer.appendChild(dot);
+    }
+
+    // Highlight the active dot
+    function updateDots() {
+        dots.forEach((dot) => {
+            dot.classList.remove("active-dot");
+        });
+        dots[currentSlide].classList.add("active-dot");
+    }
+
+    // Move to a specific slide
+    function goToSlide(slideNumber) {
+        currentSlide = slideNumber;
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        updateDots();
+    }
+
+    // Autoplay the slider
+    // setInterval(() => {
+    //     if (currentSlide === slides.length - 1) {
+    //         goToSlide(0);
+    //     } else {
+    //         goToSlide(currentSlide + 1);
+    //     }
+    // }, 5000);
+
+
+</script>
+
+</html>
